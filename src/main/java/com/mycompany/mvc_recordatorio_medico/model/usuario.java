@@ -19,12 +19,17 @@ public abstract class usuario {
         return nombre;
     }
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        if(nombre == null || nombre.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nombre del usuario no puede estar vacío.");
+        }
     }
     public String getEmail() {
         return email;
     }
     public void setEmail(String email) {
+        if(email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("El email del usuario no puede estar vacío.");
+        }
         this.email = email;
     }
 }

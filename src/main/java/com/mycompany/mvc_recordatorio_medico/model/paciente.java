@@ -28,7 +28,11 @@ public class paciente extends usuario {
         return medicamentos;
     }
     public void setMedicamentos(ArrayList<medicamento> medicamentos) {
-        this.medicamentos = medicamentos;
+        if(medicamentos == null) {
+            this.medicamentos = new ArrayList<>();
+        } else {
+            this.medicamentos = medicamentos;
+        }
     }
     
 }

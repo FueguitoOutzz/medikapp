@@ -22,12 +22,18 @@ public class recordatorio {
         return fechaHora;
     }
     public void setFechaHora(String fechaHora) {
+        if(fechaHora == null || fechaHora.trim().isEmpty()) {
+            throw new IllegalArgumentException("La fecha y hora del recordatorio no puede estar vacío.");
+        }
         this.fechaHora = fechaHora;
     }
     public String getMensaje() {
         return mensaje;
     }
     public void setMensaje(String mensaje) {
+        if(mensaje == null || mensaje.trim().isEmpty()) {
+            throw new IllegalArgumentException("El mensaje del recordatorio no puede estar vacío.");
+        }
         this.mensaje = mensaje;
     }
     public String getEstado() {
