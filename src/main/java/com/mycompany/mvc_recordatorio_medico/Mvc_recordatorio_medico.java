@@ -4,9 +4,6 @@
 
 package com.mycompany.mvc_recordatorio_medico;
 
-import controller.ControladorMedicamentos;
-import controller.ControladorMenu;
-
 /**
  *
  * @author Mizu
@@ -14,11 +11,8 @@ import controller.ControladorMenu;
 public class Mvc_recordatorio_medico {
 
     public static void main(String[] args) {
-        ControladorMedicamentos controlador = new ControladorMedicamentos();
-        ControladorMenu controladorMenu = new ControladorMenu();
-        
-        controladorMenu.iniciar();
-        //controlador.iniciar();
-        
+        // Iniciar con la pantalla de Login
+        controller.ControladorLogin login = new controller.ControladorLogin();
+        login.iniciar();
     }
 }

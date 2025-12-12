@@ -3,12 +3,14 @@ package model;
 public abstract class Usuario {
     private String id;
     private String nombre;
-    private String email;
+    private String nickname;
+    private String contrasena;
     private String telefono;
-    public Usuario(String id, String nombre, String email, String telefono) {
+    public Usuario(String id, String nombre, String nickname, String contrasena, String telefono) {
         setId(id);
         setNombre(nombre);
-        setEmail(email);
+        setNickname(nickname);
+        setContrasena(contrasena);
         setTelefono(telefono);
     }
     public String getId() {
@@ -29,14 +31,23 @@ public abstract class Usuario {
         }
         this.nombre = nombre;
     }
-    public String getEmail() {
-        return email;
+    public String getNickname() {
+        return nickname;
     }
-    public void setEmail(String email) {
-        if(email == null || email.trim().isEmpty()) {
-            throw new IllegalArgumentException("El email del usuario no puede estar vacío.");
+    public void setNickname(String nickname) {
+        if(nickname == null || nickname.trim().isEmpty()) {
+            throw new IllegalArgumentException("El nickname del usuario no puede estar vacío.");
         }
-        this.email = email;
+        this.nickname = nickname;
+    }
+    public String getContrasena() {
+        return contrasena;
+    }
+    public void setContrasena(String contrasena) {
+        if(contrasena == null || contrasena.trim().isEmpty()) {
+            throw new IllegalArgumentException("La contraseña del usuario no puede estar vacía.");
+        }
+        this.contrasena = contrasena;
     }
     public String getTelefono() {
         return telefono;
