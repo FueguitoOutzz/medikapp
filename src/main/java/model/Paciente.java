@@ -6,8 +6,8 @@ public class Paciente extends Usuario {
     private ArrayList<String> historialMedico;
     private ArrayList<Medicamento> medicamentos;
     
-    public Paciente(String id, String nombre, String email, String telefono, int edad, ArrayList<String> historialMedico) {
-        super(id, nombre, email, telefono);
+    public Paciente(String id, String nombre, String nickname, String contrasena, String telefono, int edad, ArrayList<String> historialMedico) {
+        super(id, nombre, nickname, contrasena, telefono);
         setEdad(edad);
         setHistorialMedico(historialMedico);
         setMedicamentos(null);

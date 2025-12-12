@@ -1,0 +1,13 @@
+# Maven build directory
+target/
+
+# NetBeans specific (optional, good practice to ignore)
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+
+# OS specific
+.DS_Store
+Thumbs.db
