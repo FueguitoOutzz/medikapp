@@ -39,10 +39,6 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         return DosisField;
     }
     
-    public JTextField getFrecuenciaField(){
-        return FrecuenciaField;
-    }
-    
     public JTable getTabla(){
         return Tabla;
     }
@@ -72,9 +68,6 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         DosisCampo = new javax.swing.JPanel();
         DosisText = new javax.swing.JLabel();
         DosisField = new javax.swing.JTextField();
-        FrecuenciaCampo = new javax.swing.JPanel();
-        FrecuenciaText = new javax.swing.JLabel();
-        FrecuenciaField = new javax.swing.JTextField();
         AgregarButton = new javax.swing.JButton();
         LimpiarButton = new javax.swing.JButton();
         Tabla_Panel = new javax.swing.JPanel();
@@ -127,7 +120,7 @@ public class VistaMedicamentos extends javax.swing.JFrame {
             .addGroup(NombreCampoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(NombreText, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
                 .addComponent(NombreField, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -170,39 +163,6 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                 .addContainerGap(9, Short.MAX_VALUE))
         );
 
-        FrecuenciaCampo.setFocusCycleRoot(true);
-
-        FrecuenciaText.setText("Frecuencia (Horas)");
-
-        FrecuenciaField.setToolTipText("");
-        FrecuenciaField.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        FrecuenciaField.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FrecuenciaFieldActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout FrecuenciaCampoLayout = new javax.swing.GroupLayout(FrecuenciaCampo);
-        FrecuenciaCampo.setLayout(FrecuenciaCampoLayout);
-        FrecuenciaCampoLayout.setHorizontalGroup(
-            FrecuenciaCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrecuenciaCampoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(FrecuenciaText, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FrecuenciaField, javax.swing.GroupLayout.PREFERRED_SIZE, 493, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        FrecuenciaCampoLayout.setVerticalGroup(
-            FrecuenciaCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(FrecuenciaCampoLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(FrecuenciaCampoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FrecuenciaText)
-                    .addComponent(FrecuenciaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(9, Short.MAX_VALUE))
-        );
-
         AgregarButton.setText("Agregar");
         AgregarButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -221,7 +181,6 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                 .addGroup(DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(NombreCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DosisCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FrecuenciaCampo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(DatosLayout.createSequentialGroup()
                         .addComponent(AgregarButton)
                         .addGap(18, 18, 18)
@@ -236,13 +195,11 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                 .addComponent(NombreCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(DosisCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FrecuenciaCampo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarButton)
                     .addComponent(LimpiarButton))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout FormularioLayout = new javax.swing.GroupLayout(Formulario);
@@ -256,7 +213,9 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         );
         FormularioLayout.setVerticalGroup(
             FormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Datos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(FormularioLayout.createSequentialGroup()
+                .addComponent(Datos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout Información_PanelLayout = new javax.swing.GroupLayout(Información_Panel);
@@ -285,13 +244,13 @@ public class VistaMedicamentos extends javax.swing.JFrame {
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Medicamento", "Dosis", "Frecuencia", "Siguiente Dosis"
+                "Medicamento", "Dosis", "Frecuencia"
             }
         ));
         jScrollPane1.setViewportView(Tabla);
@@ -333,25 +292,21 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreFieldActionPerformed
+    private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NombreFieldActionPerformed
-
-    private void DosisFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DosisFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DosisFieldActionPerformed
-
-    private void FrecuenciaFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FrecuenciaFieldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FrecuenciaFieldActionPerformed
+    }//GEN-LAST:event_VolverButtonActionPerformed
 
     private void AgregarButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AgregarButtonActionPerformed
 
-    private void VolverButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VolverButtonActionPerformed
+    private void DosisFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DosisFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_VolverButtonActionPerformed
+    }//GEN-LAST:event_DosisFieldActionPerformed
+
+    private void NombreFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -385,9 +340,6 @@ public class VistaMedicamentos extends javax.swing.JFrame {
     private javax.swing.JTextField DosisField;
     private javax.swing.JLabel DosisText;
     private javax.swing.JPanel Formulario;
-    private javax.swing.JPanel FrecuenciaCampo;
-    private javax.swing.JTextField FrecuenciaField;
-    private javax.swing.JLabel FrecuenciaText;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel Información_Panel;
     private javax.swing.JButton LimpiarButton;

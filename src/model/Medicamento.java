@@ -3,11 +3,9 @@ package model;
 public class Medicamento {
     private String nombre;
     private String dosis;
-    private int frecuencia;
-    public Medicamento(String nombre, String dosis, int frecuencia) {
+    public Medicamento(String nombre, String dosis) {
         setNombre(nombre);
         setDosis(dosis);
-        setFrecuencia(frecuencia);
     }
     public String getNombre() {
         return nombre;
@@ -26,14 +24,5 @@ public class Medicamento {
             throw new IllegalArgumentException("La dosis del medicamento no puede estar vacía.");
         }
         this.dosis = dosis;
-    }
-    public int getFrecuencia() {
-        return frecuencia;
-    }
-    public void setFrecuencia(int frecuencia) {
-        if(frecuencia < 0) {
-            throw new IllegalArgumentException("La frecuencia del medicamento no puede ser menor a 0.");
-        }
-        this.frecuencia = frecuencia;
     }
 }

@@ -10,12 +10,12 @@ import view.VistaLogin;
 public class ControladorLogin {
     private VistaLogin view;
     private GestorUsuarios gestorUsuarios;
-    private ControladorMenu controladorMenu;
+    private ControladorVistaPrincipal controladorMenu;
 
     public ControladorLogin() {
         this.view = new VistaLogin();
         this.gestorUsuarios = new GestorUsuarios();
-        this.controladorMenu = new ControladorMenu();
+        this.controladorMenu = new ControladorVistaPrincipal();
 
         this.view.getBtnIngresar().addActionListener(new ActionListener() {
             @Override

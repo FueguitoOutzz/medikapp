@@ -1,18 +1,18 @@
 package controller;
 
-import view.MenuPrincipal;
+import view.VistaPrincipal;
 import view.VistaMedicamentos;
 
 /**
  *
  * @author valde
  */
-public class ControladorMenu {
-    private MenuPrincipal menu;
+public class ControladorVistaPrincipal {
+    private VistaPrincipal menu;
     private ControladorMedicamentos controladorMedicamentos;
     
-    public ControladorMenu(){
-        this.menu = new MenuPrincipal();
+    public ControladorVistaPrincipal(){
+        this.menu = new VistaPrincipal();
         this.controladorMedicamentos = new ControladorMedicamentos();
     }
     

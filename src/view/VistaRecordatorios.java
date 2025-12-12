@@ -4,7 +4,7 @@ import model.Recordatorio;
 import java.util.List;
 import java.util.Scanner;
 
-public class vistaRecordatorios {
+public class VistaRecordatorios {
 	private static final Scanner SC = new Scanner(System.in);
 
 	public static void mostrarListado(List<Recordatorio> list) {

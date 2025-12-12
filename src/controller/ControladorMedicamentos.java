@@ -41,9 +41,7 @@ public class ControladorMedicamentos {
         String dosis = this.vista.getDosisField().getText();
         
         try{
-            int frecuencia = Integer.parseInt(this.vista.getFrecuenciaField().getText());
-            
-            gestor.agregarMedicamento(new Medicamento(nombre, dosis, frecuencia));
+            gestor.agregarMedicamento(new Medicamento(nombre, dosis));
             VistaMensaje.verMensajeInfo(null, "Medicamento Agregado Correctamente");
             limpiarFormulario();  
             listarMedicamentos();
@@ -59,14 +57,13 @@ public class ControladorMedicamentos {
         DefaultTableModel m = (DefaultTableModel) vista.getTabla().getModel();
         m.setNumRows(0);
         for (Medicamento me: this.gestor.getMedicamentos()) {
-            m.addRow(new Object[]{me.getNombre(), me.getDosis(), me.getFrecuencia()});
+            m.addRow(new Object[]{me.getNombre(), me.getDosis()});
         }
     }
     
     private void limpiarFormulario() {
         this.vista.getNombreField().setText("");
         this.vista.getDosisField().setText("");
-        this.vista.getFrecuenciaField().setText("");
         this.vista.getNombreField().requestFocus();
     }
     
