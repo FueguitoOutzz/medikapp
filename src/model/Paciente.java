@@ -3,14 +3,12 @@ import java.util.ArrayList;
 
 public class Paciente extends Usuario {
     private int edad;
-    private ArrayList<String> historialMedico;
-    private ArrayList<Medicamento> medicamentos;
+    private ArrayList<String> enfermedades;
     
-    public Paciente(String id, String nombre, String nickname, String contrasena, String telefono, int edad, ArrayList<String> historialMedico) {
+    public Paciente(String id, String nombre, String nickname, String contrasena, String telefono, int edad) {
         super(id, nombre, nickname, contrasena, telefono);
         setEdad(edad);
-        setHistorialMedico(historialMedico);
-        setMedicamentos(null);
+        setEnfermedades(enfermedades);
     }
     public int getEdad() {
         return edad;
@@ -21,25 +19,14 @@ public class Paciente extends Usuario {
         }
         this.edad = edad;
     }
-    public ArrayList<String> getHistorialMedico() {
-        return historialMedico;
+    public ArrayList<String> getEnfermedades() {
+        return enfermedades;
     }
-    public void setHistorialMedico(ArrayList<String> historialMedico) {
-        if(historialMedico == null) {
-            this.historialMedico = new ArrayList<>();
+    public void setEnfermedades(ArrayList<String> enfermedades) {
+        if(enfermedades == null) {
+            this.enfermedades = new ArrayList<>();
         } else {
-            this.historialMedico = historialMedico;
+            this.enfermedades = enfermedades;
         }
     }
-    public ArrayList<Medicamento> getMedicamentos() {
-        return medicamentos;
-    }
-    public void setMedicamentos(ArrayList<Medicamento> medicamentos) {
-        if(medicamentos == null) {
-            this.medicamentos = new ArrayList<>();
-        } else {
-            this.medicamentos = medicamentos;
-        }
-    }
-    
 }

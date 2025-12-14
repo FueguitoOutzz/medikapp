@@ -3,19 +3,16 @@ package model;
 import java.util.ArrayList;
 
 public class GestorUsuarios {
-    private ArrayList<Usuario> usuarios;
+    private UsuarioDAO usuarioDAO;
 
     public GestorUsuarios() {
-        this.usuarios = new ArrayList<>();
-        Administrador admin = new Administrador("1", "Administrador", "admin", "1234", "555-5555");
-        usuarios.add(admin);
+        this.usuarioDAO = new UsuarioDAO();
     }
 
     public Usuario validarUsuario(String nickname, String contrasena) {
-        for (Usuario u : usuarios) {
-            if (u.getNickname().equals(nickname) && u.getContrasena().equals(contrasena)) {
-                return u;
-            }
+        Usuario u = usuarioDAO.obtenerUsuarioPorNickname(nickname);
+        if (u != null && u.getContrasena().equals(contrasena)) {
+            return u;
         }
         return null;
     }
