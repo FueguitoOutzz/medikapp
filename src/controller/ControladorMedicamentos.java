@@ -4,6 +4,7 @@
  */
 package controller;
 
+import DAOs.MedicamentosDAO;
 import model.GestorMedicamentos;
 import model.Medicamento;
 import view.VistaMedicamentos;
@@ -16,6 +17,7 @@ import javax.swing.table.DefaultTableModel;
  * @author valde
  */
 public class ControladorMedicamentos {
+    private MedicamentosDAO medicamentosDAO;
     private GestorMedicamentos gestor;
     private VistaMedicamentos vista;
     //private ControladorMenu menu;
@@ -23,6 +25,7 @@ public class ControladorMedicamentos {
     public ControladorMedicamentos(){
         this.gestor = new GestorMedicamentos();
         this.vista = new VistaMedicamentos();
+        this.medicamentosDAO = new MedicamentosDAO();
         //this.menu = new ControladorMenu();
     }
     
@@ -30,6 +33,8 @@ public class ControladorMedicamentos {
         this.vista.setVisible(true);
         this.vista.getAgregarBtn().addActionListener(e -> agregarMedicamento());
         this.vista.getLimpiarButton().addActionListener(e -> limpiarFormulario());
+        
+        listarMedicamentos();
         /*this.vista.getVolverButton().addActionListener(e -> {
             
             //this.menu.iniciar();
@@ -39,9 +44,11 @@ public class ControladorMedicamentos {
     public void agregarMedicamento(){
         String nombre = this.vista.getNombreField().getText();
         String dosis = this.vista.getDosisField().getText();
+        Medicamento nuevoMed = new Medicamento(nombre, dosis);
         
         try{
-            gestor.agregarMedicamento(new Medicamento(nombre, dosis));
+            medicamentosDAO.guardar(nuevoMed);
+            
             VistaMensaje.verMensajeInfo(null, "Medicamento Agregado Correctamente");
             limpiarFormulario();  
             listarMedicamentos();
@@ -56,7 +63,7 @@ public class ControladorMedicamentos {
     private void listarMedicamentos() {
         DefaultTableModel m = (DefaultTableModel) vista.getTabla().getModel();
         m.setNumRows(0);
-        for (Medicamento me: this.gestor.getMedicamentos()) {
+        for (Medicamento me: medicamentosDAO.getMedicamentos()) {
             m.addRow(new Object[]{me.getNombre(), me.getDosis()});
         }
     }

@@ -3,7 +3,7 @@
  */
 
 package com.mycompany.mvc_recordatorio_medico;
-
+import config.InitDB;
 /**
  *
  * @author Mizu
@@ -11,6 +11,9 @@ package com.mycompany.mvc_recordatorio_medico;
 public class Mvc_recordatorio_medico {
 
     public static void main(String[] args) {
+        
+        InitDB.crearTablas();
+        
         // Iniciar con la pantalla de Login
         controller.ControladorLogin login = new controller.ControladorLogin();
         login.iniciar();
