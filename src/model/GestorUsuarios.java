@@ -1,5 +1,6 @@
 package model;
 
+import DAOs.UsuarioDAO;
 import java.util.ArrayList;
 
 public class GestorUsuarios {

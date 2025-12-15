@@ -1,4 +1,4 @@
-package model;
+package config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -22,16 +22,24 @@ public class DatabaseConnection {
     }
 
     private static void createTables(Connection conn) {
-        String sql = "CREATE TABLE IF NOT EXISTS usuarios ("
+        String usuarios = "CREATE TABLE IF NOT EXISTS usuarios ("
                 + "id TEXT PRIMARY KEY,"
                 + "nombre TEXT NOT NULL,"
                 + "nickname TEXT NOT NULL UNIQUE,"
                 + "contrasena TEXT NOT NULL,"
                 + "telefono TEXT NOT NULL"
                 + ");";
+        
+        String medicamentos = "CREATE TABLE IF NOT EXISTS medicamentos ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "nombre TEXT NOT NULL,"
+                + "dosis TEXT NOT NULL"
+                + ");";
 
         try (Statement stmt = conn.createStatement()) {
-            stmt.execute(sql);
+            stmt.execute(usuarios);            
+            stmt.execute(medicamentos);
+
         } catch (SQLException e) {
             System.err.println("Error al crear las tablas: " + e.getMessage());
         }
