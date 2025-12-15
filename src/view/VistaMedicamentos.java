@@ -5,6 +5,9 @@
 package view;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 
@@ -46,6 +49,26 @@ public class VistaMedicamentos extends javax.swing.JFrame {
     public JButton getVolverButton(){
         return VolverButton;
     }
+    
+    public JButton getEditarButton(){
+        return EditarButton;
+    }
+    
+    public JButton getEliminarButton(){
+        return EliminarButton;
+    }
+    
+    public JPanel getEditPopup(String nombre, String dosis){
+        
+        JPanel panel = new JPanel();
+        panel.add(new JLabel("Nombre:"));
+        panel.add(new JTextField(12));
+        panel.add(new JLabel("Dosis:"));
+        panel.add(new JTextField(12));
+        //JOptionPane.showConfirmDialog(forms, panel);
+        
+        return panel;
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -70,6 +93,8 @@ public class VistaMedicamentos extends javax.swing.JFrame {
         DosisField = new javax.swing.JTextField();
         AgregarButton = new javax.swing.JButton();
         LimpiarButton = new javax.swing.JButton();
+        EditarButton = new javax.swing.JButton();
+        EliminarButton = new javax.swing.JButton();
         Tabla_Panel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Tabla = new javax.swing.JTable();
@@ -172,6 +197,10 @@ public class VistaMedicamentos extends javax.swing.JFrame {
 
         LimpiarButton.setText("Limpiar");
 
+        EditarButton.setText("Editar");
+
+        EliminarButton.setText("Eliminar");
+
         javax.swing.GroupLayout DatosLayout = new javax.swing.GroupLayout(Datos);
         Datos.setLayout(DatosLayout);
         DatosLayout.setHorizontalGroup(
@@ -185,7 +214,11 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                         .addComponent(AgregarButton)
                         .addGap(18, 18, 18)
                         .addComponent(LimpiarButton)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(EditarButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(EliminarButton)
+                        .addGap(7, 7, 7)))
                 .addContainerGap())
         );
         DatosLayout.setVerticalGroup(
@@ -198,7 +231,9 @@ public class VistaMedicamentos extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(DatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AgregarButton)
-                    .addComponent(LimpiarButton))
+                    .addComponent(LimpiarButton)
+                    .addComponent(EditarButton)
+                    .addComponent(EliminarButton))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -244,13 +279,13 @@ public class VistaMedicamentos extends javax.swing.JFrame {
 
         Tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, null, null},
-                {null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Medicamento", "Dosis", "Frecuencia"
+                "Medicamento", "Dosis"
             }
         ));
         jScrollPane1.setViewportView(Tabla);
@@ -339,6 +374,8 @@ public class VistaMedicamentos extends javax.swing.JFrame {
     private javax.swing.JPanel DosisCampo;
     private javax.swing.JTextField DosisField;
     private javax.swing.JLabel DosisText;
+    private javax.swing.JButton EditarButton;
+    private javax.swing.JButton EliminarButton;
     private javax.swing.JPanel Formulario;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel Información_Panel;

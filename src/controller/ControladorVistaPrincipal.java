@@ -1,26 +1,27 @@
 package controller;
 
 import view.VistaPrincipal;
-import view.VistaMedicamentos;
 
 /**
  *
  * @author valde
  */
 public class ControladorVistaPrincipal {
-    private VistaPrincipal menu;
+    private VistaPrincipal vistaPrincipal;
     private ControladorMedicamentos controladorMedicamentos;
     
     public ControladorVistaPrincipal(){
-        this.menu = new VistaPrincipal();
+        this.vistaPrincipal = new VistaPrincipal();
         this.controladorMedicamentos = new ControladorMedicamentos();
     }
     
     public void iniciar(){
-        this.menu.setVisible(true);
-        this.menu.getMedicamentosButton().addActionListener(e -> {
-            this.menu.setVisible(false);
+        this.vistaPrincipal.setVisible(true);
+        this.vistaPrincipal.getMedicamentosButton().addActionListener(e -> {
+            this.vistaPrincipal.setVisible(false);
+            this.controladorMedicamentos.setVistaPrincipal(vistaPrincipal);
             this.controladorMedicamentos.iniciar();
         });
+        
     }
 }

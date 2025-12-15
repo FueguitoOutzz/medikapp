@@ -34,9 +34,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         return SalirButton;
     }
     
-    public JLabel getNombreDeUsuarioFooter(){
-        return NombreDeUsuario;
-    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -52,9 +49,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         Footer = new javax.swing.JPanel();
         SalirButton = new javax.swing.JButton();
-        Información = new javax.swing.JPanel();
-        UsuarioLabel = new javax.swing.JLabel();
-        NombreDeUsuario = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         MedicamentosButton = new javax.swing.JButton();
         RecordatoriosButton = new javax.swing.JButton();
@@ -64,13 +58,13 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "ID", "Medicamento", "Fecha", "Hora", "Estado"
+                "Medicamento", "Fecha", "Hora", "Estado"
             }
         ));
         jTable1.getTableHeader().setReorderingAllowed(false);
@@ -78,35 +72,12 @@ public class VistaPrincipal extends javax.swing.JFrame {
 
         SalirButton.setText("Cerrar Sesión");
 
-        UsuarioLabel.setText("Usuario:");
-
-        javax.swing.GroupLayout InformaciónLayout = new javax.swing.GroupLayout(Información);
-        Información.setLayout(InformaciónLayout);
-        InformaciónLayout.setHorizontalGroup(
-            InformaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InformaciónLayout.createSequentialGroup()
-                .addComponent(UsuarioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(NombreDeUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        InformaciónLayout.setVerticalGroup(
-            InformaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InformaciónLayout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addGroup(InformaciónLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(UsuarioLabel)
-                    .addComponent(NombreDeUsuario)))
-        );
-
         javax.swing.GroupLayout FooterLayout = new javax.swing.GroupLayout(Footer);
         Footer.setLayout(FooterLayout);
         FooterLayout.setHorizontalGroup(
             FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FooterLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Información, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addContainerGap(670, Short.MAX_VALUE)
                 .addComponent(SalirButton)
                 .addContainerGap())
         );
@@ -114,9 +85,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
             FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FooterLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(FooterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Información, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(SalirButton))
+                .addComponent(SalirButton)
                 .addContainerGap(7, Short.MAX_VALUE))
         );
 
@@ -235,13 +204,10 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel Footer;
     private javax.swing.JPanel Header;
-    private javax.swing.JPanel Información;
     private javax.swing.JButton MedicamentosButton;
-    private javax.swing.JLabel NombreDeUsuario;
     private javax.swing.JButton RecordatoriosButton;
     private javax.swing.JButton SalirButton;
     private javax.swing.JScrollPane ScrollTabla;
-    private javax.swing.JLabel UsuarioLabel;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
