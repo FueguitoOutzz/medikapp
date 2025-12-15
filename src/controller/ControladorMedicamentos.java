@@ -26,6 +26,7 @@ public class ControladorMedicamentos {
     private VistaPrincipal vistaPrincipal;
     
     private ArrayList<Medicamento> medicamentos;
+    private boolean configurado = false;
     
     public ControladorMedicamentos(){
         this.gestor = new GestorMedicamentos();
@@ -40,7 +41,11 @@ public class ControladorMedicamentos {
     
     public void iniciar(){
         this.vista.setVisible(true);
-        configurarBotones();
+        
+        if (!configurado){
+            configurarBotones();
+            configurado = true;
+        }
         listarMedicamentos();
     }
     
