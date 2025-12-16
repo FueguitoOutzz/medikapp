@@ -1,7 +1,6 @@
 package model;
 
 import DAOs.UsuarioDAO;
-import java.util.ArrayList;
 
 public class GestorUsuarios {
     private UsuarioDAO usuarioDAO;
@@ -16,5 +15,8 @@ public class GestorUsuarios {
             return u;
         }
         return null;
+    }
+    public Usuario cerrarSesion(Usuario usuario) {
+        return usuario;
     }
 }
