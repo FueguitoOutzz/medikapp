@@ -35,10 +35,18 @@ public class DatabaseConnection {
                 + "nombre TEXT NOT NULL,"
                 + "dosis TEXT NOT NULL"
                 + ");";
+        
+        String recordatorios = "CREATE TABLE IF NOT EXISTS recordatorios ("
+                + "id INTEGER PRIMARY KEY AUTOINCREMENT,"
+                + "fecha_prog TEXT NOT NULL,"
+                + "mensaje TEXT NOT NULL,"
+                + "estado TEXT NOT NULL"
+                + ");";
 
         try (Statement stmt = conn.createStatement()) {
             stmt.execute(usuarios);            
             stmt.execute(medicamentos);
+            stmt.execute(recordatorios);
 
         } catch (SQLException e) {
             System.err.println("Error al crear las tablas: " + e.getMessage());
