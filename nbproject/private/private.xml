@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/view/ViewMedicamentosEditar.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>42</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/com/mycompany/mvc_recordatorio_medico/Mvc_recordatorio_medico.java</file>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/controller/ControladorLogin.java</file>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/model/Usuario.java</file>
-            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/view/VistaMedicamentos.java</file>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/controller/ControladorVistaPrincipal.java</file>
+            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/view/VistaPrincipal.java</file>
+            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/view/VistaMedicamentosEditar.java</file>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/controller/ControladorMedicamentos.java</file>
-            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/model/Medicamento.java</file>
-            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/config/DatabaseConnection.java</file>
-            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/DAOs/MedicamentosDAO.java</file>
-            <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/DAOs/UsuarioDAO.java</file>
             <file>file:/C:/Users/valde/Documentos/Java/mvc_recordatorio_medico/src/model/GestorUsuarios.java</file>
         </group>
     </open-files>
